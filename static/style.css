@@ -121,6 +121,7 @@ body{
         opacity: 1;
         translate: 0px 0px;
     }
+    
 }
 
 
@@ -1615,10 +1616,11 @@ a{
 
     }
     .homeimages{
-        padding-left: 5vw;
+
+        padding-left:3vw;
         margin-right: 0vw;
-        width:90vw;
         margin: auto;
+        width:90vw;
     } 
     .mainheading{
         font-size: 70px;
@@ -1673,8 +1675,12 @@ a{
     .menuopen{
         grid-template-columns: auto;
         grid-template-rows: auto;
+        justify-items: center;
     }
     
+    .firstcol{
+        translate: 60px 30px;
+    }
 
     .secondcol{
         display:none;
