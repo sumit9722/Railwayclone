@@ -1669,4 +1669,17 @@ a{
     .screens::-webkit-scrollbar {
         display: none;
     }
+
+    .menuopen{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    
+
+    .secondcol{
+        display:none;
+    }
+    .thirdcol{
+        display:none;
+    }
 }
