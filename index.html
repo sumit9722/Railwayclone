@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/favicon.ico" rel="icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="/static/style.css" rel="stylesheet">
+        <title>Tour BITS Pilani</title>
+        <script defer>
+
+            
+            
+            var titles=[
+                "Mathematics Aided Architectural Design Layout",
+                "Development of Deep Learning Based Intrusion Detection System For Defending Android Based HTML Web Applications",
+                "Conjunctive use of Rainwater and Ground water to provide safe drinking water with intervention of advanced technology",
+                "An Economic Appraisal of Renewables Versus Non-Renewables: A Case of Rajasthan",
+                "Development & Validation of a Prototype of a Web/Mobile App Based Positive Psychological Intervention for Adolescents"
+            ]
+            var links = [
+                "https://www.bits-pilani.ac.in/research_projects/mathematics-aided-architectural-design-layouts/",
+                "https://www.bits-pilani.ac.in/research_projects/development-of-deep-learning-based-intrusion-detection-system-for-defending-android-based-html-web-applications-against-cross-site-scripting-xss-attack/",
+                "https://www.bits-pilani.ac.in/research_projects/conjunctive-use-of-rainwater-and-ground-water-to-provide-safe-drinking-water-with-intervention-of-advanced-technology/",
+                "https://www.bits-pilani.ac.in/research_projects/an-economic-appraisal-of-renewables-versus-non-renewables-a-case-of-rajasthan/",
+                "https://www.bits-pilani.ac.in/research_projects/development-validation-of-a-prototype-of-a-web-mobile-app-based-positive-psychological-intervention-for-adolescents/"
+            ];
+            var imgs =[
+                "static/1.jpg",
+                "static/2.jpg",
+                "static/3.png",
+                "static/4.jpg",
+                "static/5.jpg"
+            ]
+            var inputdata = "";
+            function research()
+            {
+                for(let i = 0; i < 5; i++)
+                {
+                    inputdata += "<div class='researchelement'><a href='"+links[i]+"' class='researchelementlink'><img class='researchimg' src='"+imgs[i]+"'><div  class='researchtitle'>"+titles[i]+"</div></a></div>"
+                    console.log(inputdata);
+                };
+                document.getElementById("researchlist").innerHTML=inputdata;
+            }
+            
+            
+
+
+            function slideup(){
+                slide(0);
+            }
+
+            function slidedown()
+            {
+                slide(1);
+            }
+
+            var pos = 1;
+            var prepos =pos;
+            var no = 1;
+            function slide(number)
+            {
+                if (no > 1)
+                {
+                    document.getElementById('screen1').style.opacity = 0;
+                }
+                var s = document.getElementById('screen' + pos);
+                var imageout = document.getElementById('homeimage' + pos);
+                var text1out = document.getElementById('p1t' + pos);
+                var text2out = document.getElementById('p2t' + pos);
+                var linkout = document.getElementById('link' + pos);
+                
+                imageout.classList.remove('animateimgin');
+                imageout.classList.remove('animateimgout');
+                void imageout.offsetWidth;
+
+                imageout.classList.add('animateimgout');
+                text1out.classList.add('animatetextout');
+                text2out.classList.add('animatetextout');
+                linkout.classList.add('animatetextout');
+
+                prepos = pos;
+
+                if(number == 0)
+                {
+                    if(pos + 1 > 3 )
+                    {
+                        pos = 1;
+                    }
+                    else
+                    {
+                        pos = pos+1;
+                    } 
+                }
+                else
+                {
+                    if(pos - 1 < 1 )
+                    {
+                        pos = 3;
+                    }
+                    else
+                    {
+                        pos = pos-1;
+                    } 
+                }
+
+                
+
+                
+                var s = document.getElementById('screen' + pos);
+                var imageout = document.getElementById('homeimage' + pos);
+                var text1out = document.getElementById('p1t' + pos);
+                var text2out = document.getElementById('p2t' + pos);
+                var linkout = document.getElementById('link' + pos);
+                
+                imageout.classList.remove('animateimgin');
+                imageout.classList.remove('animateimgout');
+                s.classList.remove('animatefadein');
+                text1out.classList.remove('animatetextin');
+                text2out.classList.remove('animatetextin');
+                linkout.classList.remove('animatetextin');
+                void imageout.offsetWidth;
+                void s.offsetWidth;
+                void text1out.offsetWidth;
+                void text2out.offsetWidth;
+                void linkout.offsetWidth;
+
+                s.style.zIndex = 100+no;
+        
+                s.classList.add('animatefadein');
+                imageout.classList.add('animateimgin');
+                text1out.classList.add('animatetextin');
+                text2out.classList.add('animatetextin');
+                linkout.classList.add('animatetextin');
+
+                no++;
+
+                setTimeout
+                
+
+            }
+
+            function inanimation()
+            {
+                const ele = document.querySelector('.menuopen');
+                ele.classList.add('animatefadeind0');
+            }
+
+            function outanimation()
+            {
+                const ele = document.querySelector('.menuopen');
+                ele.classList.remove('animatefadeind0');
+            }
+
+            var toggle = false
+
+            function menuon(){
+                const b1 = document.getElementById('bar1');
+                const b2 = document.getElementById('bar2');
+                const but = document.getElementById('but');
+                const mainmenu = document.querySelector('.needed');
+                const mainbar = document.querySelector('.menubar');
+
+                if (toggle)
+                {
+                    b1.classList.remove('rotate1');
+                    b2.classList.remove('rotate2');
+                    but.classList.remove('menuonbutton');
+                    mainmenu.style.display= 'none';
+                    mainbar.style.position='static';
+                    toggle=false;
+                    setTimeout(outanimation(), 50);
+                }
+                else{
+                    b1.classList.add('rotate1');
+                    b2.classList.add('rotate2');
+                    but.classList.add('menuonbutton');
+                    mainmenu.style.display= 'block';
+                    mainbar.style.position='fixed';
+                    toggle=true;
+                    setTimeout(inanimation(), 50);
+                }
+            }
+
+        </script>
+    </head>
+    <body onload="research()">
+        <div class="nav" id="navbar">
+            <ul class="navlist" id ="navlist">
+                <li class="navitem" id="menu">
+                    <div class="menubar" onclick="menuon()">
+                        <img src="/static/menubar.png" alt="---" class="bars" id = "bar1">
+                        <img src="/static/menubar.png" alt="---" class="bars" id = "bar2">
+                    </div>
+                </li>
+                <li class="navitem" id="visit"><a href=""><div class="navlink">VISIT</div></a></li>
+                <li class="navitem" id="logo">
+                    <div class="navlogo">
+                        <img src="/static/LogoBW.png" alt="BITS" class="logo" id="logob">
+                        <img src="/static/Logo.png" alt="BITS" class="logo" id="logoc">
+                    </div>
+                </li>
+                <li class="navitem" id="about"><a href="https://www.bits-pilani.ac.in/about/bits-foundation/"><div class="navlink">ABOUT</div></a></li>
+                <li class="navitem" id="donate">
+                    <div class="navlink"><button class="button" id="but">ADMISSIONS</button></div>
+                    <div class="lang"><a href="hindi.html">हिन्दी</a></div>
+                </li>
+            </ul>
+        </div>
+        <div class="needed">
+            <div class="menuopen">
+                <div class="firstcol">
+                    <div class="firstcolelements"><a href="index.html" class="fcelinks">HOME</a></div>
+                    <div class="firstcolelements"><a href="https://www.bitsadmission.com/" class="fcelinks">ADMISSIONS</a></div>
+                    <div class="firstcolelements"><a href="https://www.bits-pilani.ac.in/" class="fcelinks">OFFICAIL PAGE</a></div>
+                    <div class="firstcolelements"><a href="https://www.bits-pilani.ac.in/research/overview/" class="fcelinks">OUR RESEARCH</a></div>
+                    <div class="firstcolelements"><a href="https://www.bits-pilani.ac.in/about/bits-foundation/" class="fcelinks">ABOUT</a></div>
+                    <div class="firstcolelements"><a href="https://www.bits-pilani.ac.in/contact-us/" class="fcelinks">CONTACT US</a></div>
+                </div>
+                <div class="secondcol">
+                    <div class="secondcoltitle">VISIT</div>
+                    <div class="secondcolelements"><a href="visit.html" class="scelinks">LOCATION</a></div>
+                    <div class="secondcolelements"><a href="" class="scelinks">MAP</a></div>
+                    <div class="secondcolelements"><a href="" class="scelinks">EVENT</a></div>
+                    <div class="secondcolelements"><a href="" class="scelinks">FAQ</a></div>
+                </div>
+                <div class="thirdcol">
+                    <div class="thirdcoltitle">ABOUT</div>
+                    <div class="thirdcolelements"><a href="https://www.bits-pilani.ac.in/about/bits-foundation/" class="tcelinks">BIIS FOUNDATION</a></div>
+                    <div class="thirdcolelements"><a href="https://www.bits-pilani.ac.in/about/bits-legacy/" class="tcelinks">BITS LEGACY</a></div>
+                    <div class="thirdcolelements"><a href="https://www.bits-pilani.ac.in/about/leadership/" class="tcelinks">LEADERSHIP</a></div>
+                    <div class="thirdcolelements"><a href="https://www.bits-pilani.ac.in/about/accolades/" class="tcelinks">ACCOLADES</a></div>
+                </div>
+                <div class="forthcol">
+                    <div class="fbox1">
+                        <div>Admission For 1st Degree</div>
+                        <div>Students happens in JULY</div>
+                    </div>
+                    <div class="fbox2">
+                        <div>Our Branches are in</div>
+                        <div>Pilani Hydrabad Goa Dubai Mumbai</div>
+                    </div>
+                    <div class="smcontainer">
+                        <div class="followtext">Follow Along</div>
+                        <div class="socialmedialinks">
+                            <a href="https://www.facebook.com/universitybitspilani/"><img src="static/facebook.png" alt="" class="smlinks" id="fb"></a>
+                            <a href="https://www.instagram.com/bitspilaniofficial/?hl=en"><img src="static/instagram.png" alt="" class="smlinks" id="ig"></a>
+                            <a href="https://x.com/bitspilaniindia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="static/twiiter.png" alt="" class="smlinks" id="x"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navlogo" id="inmenulogo">
+                    <img src="/static/LogoBW.png" alt="BITS" class="logo" id="logob">
+                    <img src="/static/Logo.png" alt="BITS" class="logo" id="logoc">
+                </div>
+                <div class="under">
+                    <div class="contact">Say Hello</div>
+                    <div class="contactinfo">
+                        xyx.@bits-pilani.ac.in
+                        XXXXXXXXXX
+                    </div>
+                </div>
+                <div class="under2">
+                    <div class="contact">Say Hello</div>
+                    <div class="contactinfo">
+                        xyx.@bits-pilani.ac.in
+                        XXXXXXXXXX
+                    </div>
+                </div>
+                <div class="copyrighttext" id="inmenucp">&#169 2024 BITS Pilani, Sumit Kumar Shah</div>
+    
+                
+            </div>
+        </div>
+        <div class="homebody">
+            <div class="mainbox">
+                <div class="slidearowright">
+                    <img src="static/thinlongarrow.png" alt="-------------" class="slidearrowright" onclick="slideup()">
+                </div>
+                <div class="slidearowleft">
+                    <img src="static/thinlongarrowturned.png" alt="-------------" class="slidearrowleft" onclick="slidedown()">
+                </div>
+                <div class="interbox">
+                    <div class="mainheading">BITS Pilani</div>
+                    <div class="screens">
+                        <div class="homedis" id="screen1">
+                            <div class="bodytext" id="text1">
+                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe<div class="arrowforward">&#8594;</div></div>
+                                <div class="text" id="p1t1">Symbol of Our </div>
+                                <div class="text" id="p2t1">Excellence</div>
+                                <div class="homelinks" id="link1"><a href=""><div class="linktext" id="linktext1">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                            </div>
+                            <div class="imgdiv" id="img1"><img src="/static/main.jpg" alt="BITS" class="homeimages" id="homeimage1"></div>
+                        </div>
+                        <div class="homedis" id="screen2">
+                            <div class="bodytext" id="text2">
+                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
+                                <div class="text" id="p1t2">A Place to Find </div>
+                                <div class="text" id="p2t2">Peace</div>
+                                <div class="homelinks" id="link2"><a href=""><div class="linktext" id="linktext2">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                            </div>
+                            <div class="imgdiv" id="img2"><img src="/static/sarswatimandir.png" alt="BITS" class="homeimages" id="homeimage2"></div>
+                        </div>
+                        <div class="homedis" id="screen3">
+                            <div class="bodytext" id="text3">
+                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
+                                <div class="text" id="p1t3">Collection of Knowledge</div>
+                                <div class="text" id="p2t3"> and Experience</div>
+                                <div class="homelinks" id="link3"><a href=""><div class="linktext" id="linktext3">Visit Campus <div class="ar"> &#8594;</div></div></a></div>
+                            </div>
+                            <div class="imgdiv" id="img3"><img src="/static/bitslibrary.png" alt="BITS" class="homeimages" id="homeimage3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spotbox" id="spotbox1">
+                <div class="places">
+                    <div class="secondtitle"id="show1">
+                        <div class="placetitle" id ="t1">Visiting</div>
+                        <div class="placetitle" id ="t2">BITS Pilani</div>
+                    </div>
+                    <div class="spots">
+                        <div class="spot" id="spot1">
+                            <div class="spottext" id="spottext1">
+                                <div class="spotarrow" id="spotarrowdiv1">
+                                    <img src="static/arrowsthinner.png" alt="->" class="spotarrow" id="spotarrow1">
+                                </div>
+                                <div class="spotname" id="spot1name">
+                                    Hostel
+                                </div>
+                                <div class="spotexp" id="spot1exp">
+                                    Top notch Hostels
+                                </div>
+                                <div class="symbol" id="symbol1">
+                                    <div  id="cycle"><img src="static/cyclelogo.png" alt="" class="symbolimg"></div>
+                                    
+                                    <img src="static/bubble1.png" alt=""  id="bubble1" class="symboltext">
+                                </div>
+                                <div class="spotaddress" id="spot1address">
+                                    <a href="" id="spot1address1">Get Direction <div class="linkarrowmove" id="linkarrowmove1">&#8599;</div></a>
+                                </div>
+                            </div>
+                            <div class="spotimage" id="spotimage1">
+                                <img src="static/hostel.png" alt="Hostel" class="spotmedia" id ="spotmediapic1">
+                                <video autoplay loop src="static/hostelslow.mp4" class ="spotmedia" id ="spotmediavid1"></video>
+                            </div>
+                        </div>
+                        <div class="spot" id="spot2">
+                            <div class="spottext" id="spottext2">
+                                <div class="spotarrow" id="spotarrowdiv2">
+                                    <img src="static/arrowsthinner.png" alt="->" class="spotarrow" id="spotarrow2">
+                                </div>
+                                <div class="spotname" id="spot2name">
+                                    Sport Ground
+                                </div>
+                                <div class="spotexp" id="spot2exp">
+                                    Facilities for All Your Sporting Needs
+                                </div>
+                                <div class="symbol" id="symbol2">
+                                    <div  id="sport"><img src="static/sportlogo.png" alt="" class="symbolimg" id="sport"></div>
+                                    <img src="static/bubble2.png" alt=""  id="bubble2" class="symboltext">
+                                </div>
+                                <div class="spotaddress" id="spot2address">
+                                    <a href="" id="spot2address2">Get Direction <div class="linkarrowmove" id="linkarrowmove2">&#8599;</div></a>
+                                </div>
+                            </div>
+                            <div class="spotimage" id="spotimage2">
+                                <img src="static/bosm.jpg" alt="BOSM" class="spotmedia" id="spotmediapic2">
+                                <video autoplay loop src="static/bosmslow.mp4" class="spotmedia" id="spotmediavid2"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sometext" id="show2">
+                <div class="line line1">Campus has both place to enhance</div>
+                <div class="line line2">academic excellence and</div>
+                <div class="line line3">to foster personal grouth,</div>
+                <div class="line line4">everyplace stay with you</div>
+            </div>
+            <div class="text" id="extending">
+                And there's a lot more to do
+            </div>
+            <div class="places2">
+                <div class="addplace" id="addplace1">
+                    <div class="addplacetext" id="addplacetext1">
+                        <div class="addplacetitle" id = "addplacetitle1">Sky lawns</div>
+                        <div class="addplaceexp" id="addplaceexp1">
+                            Meals to enjoy with friends
+                        </div>
+                    </div>
+                    <div class="addplaceimage" id="addplaceimage1">
+                        <img src="static/skylab.png" alt="" class="extraimg" id="imgmedia1">
+                        <video autoplay src="static/skylawnslow.mp4" class="media1" id="vidmedia1"></video>
+                    </div>
+                </div>
+                <div class="addplace" id="addplace2">
+                    <div class="addplacetext" id="addplacetext2">
+                        <div class="addplacetitle" id = "addplacetitle2">Birla Muesum</div>
+                        <div class="addplaceexp" id="addplaceexp2">
+                            Innovation of Generations
+                        </div>
+                    </div>
+                    <div class="addplaceimage" id="addplaceimage2">
+                        <img src="static/sciencecenter.jpg" alt="" class="extraimg" id="imgmedia2">
+                        <video autoplay src="static/sciencecenterslow.mp4" class="media2" id="vidmedia2"></video>
+                    </div>
+                </div>
+                <div class="addplace" id="addplace3">
+                    <div class="addplacetext" id="addplacetext3">
+                        <div class="addplacetitle" id = "addplacetitle3">SAC</div>
+                        <div class="addplaceexp" id="addplaceexp3">
+                            Place For All Your Creativity
+                        </div>
+                    </div>
+                    <div class="addplaceimage" id="addplaceimage3">
+                        <img src="static/sacgood.png" alt="" class="extraimg" id="imgmedia3">
+                        <video autoplay src="static/savslow.mp4" class="media3" id="vidmedia3"></video>
+                    </div>
+                </div>
+                <div class="vision" id="visiontext">
+                    The Birla Institute of Technology & Science, BITS Pilani, is an all-India Institute for higher education. The primary aim of BITS is to "train young men and women able and eager to create and put into action such ideas, methods, techniques, and information".
+                    <div class="weblink"><a href="https://www.bits-pilani.ac.in/" class="weblinkaddress">For more detail visit out website <div class="weblinkarrow">&#8594;</div></a></div>
+                </div>
+
+            </div>
+            <div class="ourprojects">
+                <div class="researchhead">Our Reserach</div>
+                <div class="researchlist" id = "researchlist">
+                    
+                </div>
+            </div>
+            <div class="email">
+                <div class="emailtext">
+                    Be the first to know about our events, programs and update.
+                </div>
+                <div class="emailplace">
+                    <input type="text" placeholder="Enter Your Email" class="emailbox">
+                    <div class="emailarrow"><a href=""><img src="static/arrowsthinner.png" id="emailarrow" alt="->"></a></div>
+                </div>
+            </div>
+            <div class="implinks">
+                <div class="part1">
+                    <div class="rotatinglogo"><img src="static/rotatin.gif" alt=""></div>
+                    <div class="rotaterkbhai">
+                        <div class="copyrighttext">&#169 2024 BITS Pilani, Sumit Kumar Shah</div>
+                        <div class="contact">Say Hello</div>
+                        <div class="contactinfo">
+                            xyx.@bits-pilani.ac.in
+                            XXXXXXXXXX
+                        </div>
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="links" id="link1">
+                        <a href="https://www.bits-pilani.ac.in/" class ="finallinks" id="finallin1k">Official Website</a>
+                    </div>
+                    <div class="links" id="link2">
+                        <a href="https://www.bits-pilani.ac.in/admissions/" class ="finallinks" id="finallink2">Admission</a>
+                    </div>
+                    <div class="links" id="link3">
+                        <a href="https://erp.bits-pilani.ac.in/" class ="finallinks" id="finallink3">ERP</a>
+                    </div>
+                    <div class="links" id="link4">
+                        <a href="https://web.bits-pilani.ac.in/PhDThesisStatus/Faculty/FacultyLogin.aspx" class ="finallinks" id="finallink4">Phd Thesis Upadate</a>
+                    </div>
+                    <div class="smcontainer">
+                        <div class="followtext">Follow Along</div>
+                        <div class="socialmedialinks">
+                            <a href="https://www.facebook.com/universitybitspilani/"><img src="static/facebook.png" alt="" class="smlinks" id="fb"></a>
+                            <a href="https://www.instagram.com/bitspilaniofficial/?hl=en"><img src="static/instagram.png" alt="" class="smlinks" id="ig"></a>
+                            <a href="https://x.com/bitspilaniindia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="static/twiiter.png" alt="" class="smlinks" id="x"></a>
+                        </div>
+                    </div>
+                    <div class="trans">Traslation
+                        <div>
+                            <a href="hindi.html" class="langfinal">हिन्दी</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <script defer>
+            const observer1 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if(entry.isIntersecting)
+                    {
+                        entry.target.classList.add('animateshow1');
+                    }
+
+
+                });
+            },{
+                threshold : 0.5,
+            });
+
+            const s1 = document.getElementById('show1');
+            observer1.observe(s1);
+
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if(entry.isIntersecting)
+                    {
+                        entry.target.classList.add('show2');
+                    }
+
+
+                });
+            },{
+                threshold : 0.5,
+            });
+
+            const s2 = document.querySelectorAll('.line');
+            s2.forEach((el)=>observer2.observe(el));
+        </script>
+    </body>
+</html>     
