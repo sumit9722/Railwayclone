@@ -137,7 +137,6 @@
 
                 no++;
 
-                setTimeout
                 
 
             }
@@ -162,6 +161,9 @@
                 const but = document.getElementById('but');
                 const mainmenu = document.querySelector('.needed');
                 const mainbar = document.querySelector('.menubar');
+                const fullbody = document.querySelector('body');
+                const nav = document.querySelector('.nav');
+                const obs = document.querySelectorAll('.navitem1');
 
                 if (toggle)
                 {
@@ -170,6 +172,9 @@
                     but.classList.remove('menuonbutton');
                     mainmenu.style.display= 'none';
                     mainbar.style.position='static';
+                    fullbody.style.overflow = 'auto';
+                    obs.forEach((ob)=>ob.style.opacity = 1);
+                    nav.style.backgroundColor = 'rgba(250, 250, 250. 0.8)';
                     toggle=false;
                     setTimeout(outanimation(), 50);
                 }
@@ -179,10 +184,36 @@
                     but.classList.add('menuonbutton');
                     mainmenu.style.display= 'block';
                     mainbar.style.position='fixed';
+                    fullbody.style.overflow = 'Hidden';
+                    obs.forEach((ob)=>ob.style.opacity= 0);
+                    nav.style.backgroundColor = 'black';
                     toggle=true;
                     setTimeout(inanimation(), 50);
                 }
             }
+
+            var lastScroll = window.pageYOffset;
+            
+            window.addEventListener("scroll", () => {
+                const body = document.body;
+                const currentScroll = window.pageYOffset;
+                if (currentScroll <= 0) {
+                    body.classList.remove("scroll-up");
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+                    body.classList.remove("scroll-up");
+                    body.classList.add("scroll-down");
+                } else if (
+                    currentScroll < lastScroll &&
+                    body.classList.contains("scroll-down")
+                ) {
+                    body.classList.remove("scroll-down");
+                    body.classList.add("scroll-up");
+                }
+                lastScroll = currentScroll;
+            });
 
         </script>
     </head>
@@ -195,14 +226,14 @@
                         <img src="static/menubar.png" alt="---" class="bars" id = "bar2">
                     </div>
                 </li>
-                <li class="navitem" id="visit"><a href=""><div class="navlink">VISIT</div></a></li>
-                <li class="navitem" id="logo">
+                <li class="navitem1" id="visit"><a href=""><div class="navlink">VISIT</div></a></li>
+                <li class="navitem1" id="logo">
                     <div class="navlogo">
                         <img src="static/LogoBW.png" alt="BITS" class="logo" id="logob">
                         <img src="static/Logo.png" alt="BITS" class="logo" id="logoc">
                     </div>
                 </li>
-                <li class="navitem" id="about"><a href="https://www.bits-pilani.ac.in/about/bits-foundation/"><div class="navlink">ABOUT</div></a></li>
+                <li class="navitem1" id="about"><a href="https://www.bits-pilani.ac.in/about/bits-foundation/"><div class="navlink">ABOUT</div></a></li>
                 <li class="navitem" id="donate">
                     <div class="navlink"><button class="button" id="but">ADMISSIONS</button></div>
                     <div class="lang"><a href="hindi.html">हिन्दी</a></div>
@@ -283,34 +314,36 @@
                     <img src="static/thinlongarrowturned.png" alt="-------------" class="slidearrowleft" onclick="slidedown()">
                 </div>
                 <div class="interbox">
-                    <div class="mainheading">BITS Pilani</div>
-                    <div class="screens">
-                        <div class="homedis" id="screen1">
-                            <div class="bodytext" id="text1">
-                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe<div class="arrowforward">&#8594;</div></div>
-                                <div class="text" id="p1t1">Symbol of Our </div>
-                                <div class="text" id="p2t1">Excellence</div>
-                                <div class="homelinks" id="link1"><a href=""><div class="linktext" id="linktext1">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                    <div class="wrapper">
+                        <div class="mh"><div class="mainheading">BITS Pilani</div></div>
+                        <div class="screens">
+                            <div class="homedis" id="screen1">
+                                <div class="bodytext" id="text1">
+                                    <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe<div class="arrowforward">&#8594;</div></div>
+                                    <div class="text" id="p1t1">Symbol of Our </div>
+                                    <div class="text" id="p2t1">Excellence</div>
+                                    <div class="homelinks" id="link1"><a href=""><div class="linktext" id="linktext1">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                                </div>
+                                <div class="imgdiv" id="img1"><img src="static/main.jpg" alt="BITS" class="homeimages" id="homeimage1"></div>
                             </div>
-                            <div class="imgdiv" id="img1"><img src="static/main.jpg" alt="BITS" class="homeimages" id="homeimage1"></div>
-                        </div>
-                        <div class="homedis" id="screen2">
-                            <div class="bodytext" id="text2">
-                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
-                                <div class="text" id="p1t2">A Place to Find </div>
-                                <div class="text" id="p2t2">Peace</div>
-                                <div class="homelinks" id="link2"><a href=""><div class="linktext" id="linktext2">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                            <div class="homedis" id="screen2">
+                                <div class="bodytext" id="text2">
+                                    <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
+                                    <div class="text" id="p1t2">A Place to Find </div>
+                                    <div class="text" id="p2t2">Peace</div>
+                                    <div class="homelinks" id="link2"><a href=""><div class="linktext" id="linktext2">Visit Campus <div class="ar">&#8594;</div></div></a></div>
+                                </div>
+                                <div class="imgdiv" id="img2"><img src="static/sarswatimandir.png" alt="BITS" class="homeimages" id="homeimage2"></div>
                             </div>
-                            <div class="imgdiv" id="img2"><img src="static/sarswatimandir.png" alt="BITS" class="homeimages" id="homeimage2"></div>
-                        </div>
-                        <div class="homedis" id="screen3">
-                            <div class="bodytext" id="text3">
-                                <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
-                                <div class="text" id="p1t3">Collection of Knowledge</div>
-                                <div class="text" id="p2t3"> and Experience</div>
-                                <div class="homelinks" id="link3"><a href=""><div class="linktext" id="linktext3">Visit Campus <div class="ar"> &#8594;</div></div></a></div>
+                            <div class="homedis" id="screen3">
+                                <div class="bodytext" id="text3">
+                                    <div class="swipe"><div class="arrowbackward">&#8592;</div>Swipe <div class="arrowforward">&#8594;</div></div>
+                                    <div class="text" id="p1t3">Collection of Knowledge</div>
+                                    <div class="text" id="p2t3"> and Experience</div>
+                                    <div class="homelinks" id="link3"><a href=""><div class="linktext" id="linktext3">Visit Campus <div class="ar"> &#8594;</div></div></a></div>
+                                </div>
+                                <div class="imgdiv" id="img3"><img src="static/bitslibrary.png" alt="BITS" class="homeimages" id="homeimage3"></div>
                             </div>
-                            <div class="imgdiv" id="img3"><img src="static/bitslibrary.png" alt="BITS" class="homeimages" id="homeimage3"></div>
                         </div>
                     </div>
                 </div>
@@ -485,7 +518,6 @@
         <script defer>
             const observer1 = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    console.log(entry)
                     if(entry.isIntersecting)
                     {
                         entry.target.classList.add('animateshow1');
@@ -502,7 +534,6 @@
 
             const observer2 = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    console.log(entry)
                     if(entry.isIntersecting)
                     {
                         entry.target.classList.add('show2');

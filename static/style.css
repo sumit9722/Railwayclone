@@ -124,6 +124,12 @@ body{
     
 }
 
+@keyframes parallex {
+    To{
+        transform: translateY(1200px);
+    }
+}
+
 
 .animateshow1{
     animation: show1 1.5s forwards;
@@ -174,8 +180,28 @@ a{
 }
 
 .nav{
-    margin-top: 2vw;
+    
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(250, 250, 250, 0.8);
+    z-index: 99999;
+    padding-top: 2vh;
+    transition: 0.25s;
 }
+
+.scroll-down {
+	.nav {
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+.scroll-up {
+	.nav {
+
+	}
+}
+
 
 .navlist{
     font-family: "Lato", sans-serif;
@@ -210,15 +236,16 @@ a{
 .rotate1{
     translate: 0px 6px;
     rotate: 45deg;
-    z-index: 999;
+    z-index: 99999;
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(239deg) brightness(103%) contrast(101%);
 
 }
 
 .rotate2{
+
     translate: 0px -6px;
     rotate: -45deg;
-    z-index: 999;
+    z-index: 99999;
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(239deg) brightness(103%) contrast(101%);
 
 }
@@ -235,7 +262,7 @@ a{
 }
 
 .menubar{
-    z-index: 9999;
+    z-index: 99999;
     display: flex;
     flex-direction: column;  
     transition: 0.1s;  
@@ -312,8 +339,7 @@ a{
 
 
 .homebody{
-    margin-top: 5vh;
-    
+    padding-top: calc(100px + 2vh);
 }
 
 .mainbox{
@@ -363,6 +389,8 @@ a{
     grid-column: 2 /3;
     /* border: 5px solid black; */
 }
+
+
 .mainheading{
     animation: moveup 0.5s;
     animation-delay: 0.1s;
@@ -372,8 +400,14 @@ a{
     font-weight: 700;
     font-style: Bold;
     z-index:-999;
+    animation: parallex linear;
+    animation-timeline: scroll();
+}
+
+.mh{
     animation: moveup 1s;
 }
+
 
 .imgdiv
 {
@@ -1161,11 +1195,12 @@ a{
     display: none;
     position: fixed;
     background-color: black;
-    z-index: 900;
-    height: 110vh;
+    z-index: 9999;
+    height: 120vh;
     width:100vw;
     translate: 0px -94px;
     overflow-y: hidden;
+    padding-top: 100px;
 }
 .menuopen{
     opacity: 0;
@@ -1184,8 +1219,8 @@ a{
     padding: 10vw;
     gap:5vw;
     position: fixed;
-    z-index: 99999;
-    
+    z-index: 9999;
+overscroll-behavior: contain;
 
 }
 
