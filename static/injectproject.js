@@ -24,7 +24,7 @@ function research()
 {
     for(let i = 0; i < 5; i++)
     {
-        inputdata += "<div class='researchelement'><a href='"+links[i]+"' class='researchelementlink'><img class='researchimg' src='"+imgs[i]+"'><div  class='researchtitle'>"+titles[i]+"</div></a></div>"
+        inputdata += "<div class='researchelement' id = 'researchelement"+i+"'><a href='"+links[i]+"' class='researchelementlink'><img class='researchimg' src='"+imgs[i]+"'><div  class='researchtitle'>"+titles[i]+"</div></a></div>";
         console.log(inputdata);
     };
     document.getElementById("researchlist").innerHTML=inputdata;
