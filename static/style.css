@@ -782,6 +782,7 @@ a{
     font-style: Bold;
     width: 80vw;
     margin: auto;
+    position: relative;
 }
 
 
@@ -812,6 +813,7 @@ a{
 
 .line4{
     color: rgb(90, 166, 253);
+    z-index: 10;
 }
 
 #extending{
@@ -1232,8 +1234,7 @@ a{
     gap:5vw;
     position: fixed;
     z-index: 9999;
-overscroll-behavior: contain;
-
+    overscroll-behavior: contain;
 }
 
 .fcelinks{
@@ -1330,6 +1331,24 @@ overscroll-behavior: contain;
     display: none;
 }
 
+#mvideo{
+    position: absolute;
+    translate: -20vw -25vw;
+    z-index: -100;
+}
+.mainvideo{
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.videomain{
+    width:38vw;
+}
+
+.line4:hover ~ .mainvideo{
+    opacity: 1;
+    
+}
 @media (max-width : 1295px){
     .vision{
         margin: auto;
@@ -1442,6 +1461,7 @@ overscroll-behavior: contain;
     }
 
     .sometext{
+        
         font-size: 40px;
     }
 
@@ -1724,6 +1744,11 @@ overscroll-behavior: contain;
         display: none;
     }
 
+    .screens {
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+    }
+
     .menuopen{
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -1739,5 +1764,26 @@ overscroll-behavior: contain;
     }
     .thirdcol{
         display:none;
+    }
+
+    .sometext{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+    }
+    #mvideo{
+        grid-row: 1/2;
+        margin-bottom: 20px;
+        position: static;
+        translate: 0vw 0vw;
+        z-index: 0;
+    }
+    .mainvideo{
+        opacity: 1;
+        transition: opacity 0.1s;
+    }
+    
+    .videomain{
+        width:80vw;
     }
 }
