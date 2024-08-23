@@ -1,13 +1,19 @@
 function inanimation()
 {
-    const ele = document.querySelector('.menuopen');
-    ele.classList.add('animatefadeind0');
+    let i = 0;
+    const eles = document.querySelectorAll('.menuopen > *');
+    eles.forEach((ele) => {
+        setTimeout(() => {
+            ele.classList.add('animateups');
+        }, i * 50);
+        i++;
+    });
 }
 
 function outanimation()
 {
-    const ele = document.querySelector('.menuopen');
-    ele.classList.remove('animatefadeind0');
+    const eles = document.querySelectorAll('.menuopen>*');
+    eles.forEach((ele)=>ele.classList.remove('animateups'));
 }
 
 console.log(window.innerWidth);
@@ -89,3 +95,6 @@ document.addEventListener('mousemove', function(e){
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 });
+
+const eles = document.querySelectorAll('.menuopen > *');
+    eles.forEach((ele) => ele.style.opacity = 0);
