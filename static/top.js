@@ -10,6 +10,8 @@ function outanimation()
     ele.classList.remove('animatefadeind0');
 }
 
+console.log(window.innerWidth);
+
 var toggle = false
 
 function menuon(){
@@ -21,6 +23,7 @@ function menuon(){
     const fullbody = document.querySelector('body');
     const nav = document.querySelector('.nav');
     const obs = document.querySelectorAll('.navitem1');
+    const obslogo = document.querySelector('.logonav');
 
     if (toggle)
     {
@@ -43,7 +46,12 @@ function menuon(){
         mainbar.style.position='fixed';
         fullbody.style.overflow = 'Hidden';
         obs.forEach((ob)=>ob.style.opacity= 0);
+        if(window.innerWidth <= 800)
+            {
+                obslogo.style.opacity = 1;
+            }
         nav.style.backgroundColor = 'black';
+        fullbody.classList.remove("scroll-up");
         toggle=true;
         setTimeout(inanimation(), 50);
     }

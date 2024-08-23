@@ -1216,6 +1216,7 @@ a{
     overflow-y: hidden;
     padding-top: 100px;
 }
+
 .menuopen{
     opacity: 0;
     max-width: 100vw;
@@ -1349,6 +1350,7 @@ a{
     opacity: 1;
     
 }
+
 @media (max-width : 1295px){
     .vision{
         margin: auto;
@@ -1391,8 +1393,31 @@ a{
         margin-right: 0vw;
     }
 
-    .researchelement5{
-        
+    #researchelement4{
+        display: none;
+    }
+
+    .researchlist{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+
+    .researchimg{
+        width: 35vw;
+    }
+
+    .researchelementlink{
+        font-size: 26px;
+    }
+    
+    .researchtitle{
+        width: 35vw;
+    }
+
+    .menuopen{
+        padding-top: 120px;
     }
 
 }
@@ -1749,21 +1774,49 @@ a{
         scrollbar-width: none; 
     }
 
+    .needed{
+
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow-y: auto;
+
+    }
     .menuopen{
         grid-template-columns: auto;
-        grid-template-rows: auto;
-        justify-items: center;
+        grid-template-rows: auto auto;       
+        padding-left: 00vw; 
+        padding-right: 00vw;
+        min-width: fit-content;
+        min-height: fit-content;
+        margin: auto;
+        width: 100%;
+        overflow: auto;
     }
     
     .firstcol{
-        translate: 60px 30px;
+        height: fit-content;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid white;
+        padding-top: 25px;
     }
 
     .secondcol{
-        display:none;
+        display: none;
     }
     .thirdcol{
-        display:none;
+        border-top: 1px solid white;
+        padding: 25px;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        display:flex;
+        align-items: center;
+        height: fit-content;
+        gap: 5px;
     }
 
     .sometext{
@@ -1786,4 +1839,20 @@ a{
     .videomain{
         width:80vw;
     }
+
+    .ourprojects{
+        display:block;
+    }
+
+    .researchhead{
+        translate: 0px 0px;
+        rotate: 0deg;
+        margin-bottom: 20px;
+    }
+
+    .fcelinks{
+        font-size: 38px;
+        font-weight: 900;
+    }
+
 }
