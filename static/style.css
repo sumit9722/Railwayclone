@@ -1365,6 +1365,10 @@ a{
     
 }
 
+.mobile{
+    display: none;
+}
+
 @media (max-width : 1295px){
     .vision{
         margin: auto;
@@ -1387,6 +1391,9 @@ a{
     }
     .part2{
         display: none;
+    }
+    .mobile{
+        display: flex;
     }
     .implinks{
 
