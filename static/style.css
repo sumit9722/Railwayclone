@@ -863,8 +863,6 @@ a{
     grid-row: 1/2;
     grid-column: 1/2;
     border-radius: 5px;
-    animation: parallex2 linear;
-    animation-timeline: scroll();
 }
 
 #vidmedia2, #imgmedia2
@@ -873,8 +871,6 @@ a{
     grid-row: 1/2;
     grid-column: 1/2;
     border-radius: 5px;
-    animation: parallex2 linear;
-    animation-timeline: scroll();
 }
 
 #vidmedia3, #imgmedia3
@@ -883,8 +879,6 @@ a{
     grid-row: 1/2;
     grid-column: 1/2;
     border-radius: 5px;
-    animation: parallex2 linear;
-    animation-timeline: scroll();
 }
 
 #imgmedia1, #imgmedia2, #imgmedia3{

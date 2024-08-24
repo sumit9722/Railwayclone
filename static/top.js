@@ -118,3 +118,38 @@ window.addEventListener("scroll", () => {
     
     heading.style.transform = `translateY(${pos}px)`;
 });
+
+const e1 = document.getElementById('vidmedia1');
+const e2 = document.getElementById('imgmedia1');
+const e3 = document.getElementById('vidmedia2');
+const e4 = document.getElementById('imgmedia2');
+const e5 = document.getElementById('vidmedia3');
+const e6 = document.getElementById('imgmedia3');
+
+
+if (currY>(maxY*0.6))
+{
+    var posNew = 0 - (((currY - (0.6 * maxY))/(0.4*maxY)) * 100)
+    e1.style.transform = `translateY(${posNew}px)`;
+    e2.style.transform = `translateY(${posNew}px)`;
+    e3.style.transform = `translateY(${posNew}px)`;
+    e4.style.transform = `translateY(${posNew}px)`;
+    e5.style.transform = `translateY(${posNew}px)`;
+    e6.style.transform = `translateY(${posNew}px)`;
+
+    
+}
+
+window.addEventListener("scroll", () => {
+    if (currY>(maxY*0.6))
+        {
+            currY = window.scrollY;
+            posNew = 0 - (((currY - (0.6 * maxY))/(0.4*maxY)) * 100);
+            e1.style.transform = `translateY(${posNew}px)`;
+            e2.style.transform = `translateY(${posNew}px)`;
+            e3.style.transform = `translateY(${posNew}px)`;
+            e4.style.transform = `translateY(${posNew}px)`;
+            e5.style.transform = `translateY(${posNew}px)`;
+            e6.style.transform = `translateY(${posNew}px)`;
+        }
+})
