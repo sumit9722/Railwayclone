@@ -98,3 +98,23 @@ document.addEventListener('mousemove', function(e){
 
 const eles = document.querySelectorAll('.menuopen > *');
     eles.forEach((ele) => ele.style.opacity = 0);
+
+
+
+console.log(window.scrollY);
+console.log(window.scrollMaxY);
+console.log(document.body.scrollHeight);
+
+const heading = document.querySelector(".mainheading");
+var currY = window.scrollY;
+var maxY = document.body.scrollHeight;
+var pos = (currY/maxY) * 1200;
+
+heading.style.transform = `translateY(${pos}px)`;
+
+window.addEventListener("scroll", () => {
+    currY = window.scrollY;
+    pos = (currY/maxY) * 1200;
+    
+    heading.style.transform = `translateY(${pos}px)`;
+});

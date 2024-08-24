@@ -419,8 +419,8 @@ a{
     font-weight: 700;
     font-style: Bold;
     z-index:-999;
-    animation: parallex linear;
-    animation-timeline: scroll();
+    /* animation: parallex linear;
+    animation-timeline: scroll(); */
 }
 
 .mh{

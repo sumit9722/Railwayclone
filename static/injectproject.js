@@ -28,4 +28,5 @@ function research()
         console.log(inputdata);
     };
     document.getElementById("researchlist").innerHTML=inputdata;
+
 }
