@@ -1413,6 +1413,7 @@ a{
 
     .homeimages{
         margin-right: 0vw;
+        width: 40vw;
     }
 
     #researchelement4{
@@ -1440,6 +1441,10 @@ a{
 
     .menuopen{
         padding-top: 120px;
+    }
+
+    .bodytext{
+        margin-left: 3vw;
     }
 
 }
