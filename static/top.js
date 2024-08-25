@@ -92,8 +92,12 @@ var cursor = document.getElementById('mvideo');
 document.addEventListener('mousemove', function(e){
     let x = e.clientX;
     let y = e.clientY;
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
+    let scrollx = window.scrollX;
+    let scrolly = window.scrollY;
+    let cursorWidth = cursor.offsetWidth / 2;
+    let cursorHeight = cursor.offsetHeight / 2;
+    cursor.style.left = (x - cursorWidth + scrollx) + 'px';
+    cursor.style.top = (y - cursorHeight + scrolly) + 'px';
 });
 
 const eles = document.querySelectorAll('.menuopen > *');
