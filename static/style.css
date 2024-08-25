@@ -797,6 +797,14 @@ a{
     width: 80vw;
     margin: auto;
     position: relative;
+    height: 50vw;
+    min-height: fit-content;
+}
+
+.sometext2{
+    overflow-x: clip;
+    overflow-y: visible;
+    height: 40vh;
 }
 
 
@@ -828,6 +836,7 @@ a{
 .line4{
     color: rgb(90, 166, 253);
     z-index: 10;
+    width: fit-content;
 }
 
 #extending{
@@ -1344,6 +1353,7 @@ a{
     position: absolute;
     translate: -20vw -25vw;
     z-index: -100;
+    transition: 0.15s;
 }
 .mainvideo{
     opacity: 0;
@@ -1870,5 +1880,24 @@ a{
         font-size: 38px;
         font-weight: 900;
     }
+
+
+    .researchimg{
+        width: 40vw;
+        min-width: 0px;
+    }
+
+    .researchelementlink{
+        font-size: 24px;
+    }
+    
+    .researchtitle{
+        width: 40vw;
+        min-width: 0px;
+    }
+
+}
+
+@media (max-width : 800px){
 
 }
