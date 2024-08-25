@@ -796,14 +796,12 @@ a{
     font-style: Bold;
     width: 80vw;
     margin: auto;
-    height: 50vw;
-    min-height: fit-content;
 }
 
 .sometext2{
     overflow-x: clip;
     overflow-y: visible;
-    height: 40vh;
+
 }
 
 

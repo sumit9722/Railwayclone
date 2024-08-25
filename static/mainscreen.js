@@ -11,8 +11,8 @@ function screenani(obj){
     obj.style.opacity = 0;
 }
 
-var pos = 1;
-var prepos =pos;
+var posscr = 1;
+var prepos =posscr;
 var no = 1;
 function slide(number)
 {
@@ -20,11 +20,11 @@ function slide(number)
     {
         document.getElementById('screen1').style.opacity = 0;
     }
-    let s = document.getElementById('screen' + pos);
-    let imageout = document.getElementById('homeimage' + pos);
-    let text1out = document.getElementById('p1t' + pos);
-    let text2out = document.getElementById('p2t' + pos);
-    let linkout = document.getElementById('link' + pos);
+    let s = document.getElementById('screen' + posscr);
+    let imageout = document.getElementById('homeimage' + posscr);
+    let text1out = document.getElementById('p1t' + posscr);
+    let text2out = document.getElementById('p2t' + posscr);
+    let linkout = document.getElementById('link' + posscr);
     
     imageout.classList.remove('animateimgin');
     imageout.classList.remove('animateimgout');
@@ -40,39 +40,39 @@ function slide(number)
 
     // setTimeout(screenani(s), 999);
 
-    prepos = pos;
+    prepos = posscr;
 
     if(number == 0)
     {
-        if(pos + 1 > 3 )
+        if(posscr + 1 > 3 )
         {
-            pos = 1;
+            posscr = 1;
         }
         else
         {
-            pos = pos+1;
+            posscr = posscr+1;
         } 
     }
     else
     {
-        if(pos - 1 < 1 )
+        if(posscr - 1 < 1 )
         {
-            pos = 3;
+            posscr = 3;
         }
         else
         {
-            pos = pos-1;
+            posscr = posscr-1;
         } 
     }
 
     
 
     
-    let s1 = document.getElementById('screen' + pos);
-    imageout = document.getElementById('homeimage' + pos);
-    text1out = document.getElementById('p1t' + pos);
-    text2out = document.getElementById('p2t' + pos);
-    linkout = document.getElementById('link' + pos);
+    let s1 = document.getElementById('screen' + posscr);
+    imageout = document.getElementById('homeimage' + posscr);
+    text1out = document.getElementById('p1t' + posscr);
+    text2out = document.getElementById('p2t' + posscr);
+    linkout = document.getElementById('link' + posscr);
     
     imageout.classList.remove('animateimgin');
     imageout.classList.remove('animateimgout');
