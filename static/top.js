@@ -30,6 +30,7 @@ function menuon(){
     const nav = document.querySelector('.nav');
     const obs = document.querySelectorAll('.navitem1');
     const obslogo = document.querySelector('.logonav');
+    const lango = document.querySelector('.lang')
 
     if (toggle)
     {
@@ -41,6 +42,7 @@ function menuon(){
         fullbody.style.overflow = 'auto';
         obs.forEach((ob)=>ob.style.opacity = 1);
         nav.style.backgroundColor = 'rgba(250, 250, 250, 0.8)';
+        lango.style.display='block';
         toggle=false;
         setTimeout(outanimation(), 50);
     }
@@ -51,6 +53,7 @@ function menuon(){
         mainmenu.style.display= 'block';
         mainbar.style.position='fixed';
         fullbody.style.overflow = 'Hidden';
+        lango.style.display='none';
         obs.forEach((ob)=>ob.style.opacity= 0);
         if(window.innerWidth <= 800)
             {
