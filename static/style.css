@@ -796,15 +796,12 @@ a{
     font-style: Bold;
     width: 80vw;
     margin: auto;
-    position: relative;
-    height: 50vw;
-    min-height: fit-content;
 }
 
 .sometext2{
     overflow-x: clip;
     overflow-y: visible;
-    height: 40vh;
+
 }
 
 
@@ -1351,9 +1348,9 @@ a{
 
 #mvideo{
     position: absolute;
-    translate: -20vw -25vw;
     z-index: -100;
     transition: 0.15s;
+    transform-origin: 50% 50%;
 }
 .mainvideo{
     opacity: 0;
