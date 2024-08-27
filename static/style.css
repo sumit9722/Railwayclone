@@ -1350,7 +1350,7 @@ a{
 #mvideo{
     position: absolute;
     z-index: -100;
-    transition: 0.15s linear;
+    transition: 0.01s linear;
     transform-origin: 50% 50%;
 }
 .mainvideo{
