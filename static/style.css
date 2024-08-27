@@ -795,13 +795,14 @@ a{
     font-weight: 700;
     font-style: Bold;
     width: fit-content;
-    margin: auto;
+
 }
 
 .sometext2{
     overflow-x: clip;
     overflow-y: visible;
     width: 80vw;
+    margin: auto;
 }
 
 
