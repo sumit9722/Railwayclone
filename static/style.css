@@ -794,14 +794,14 @@ a{
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: Bold;
-    width: 80vw;
+    width: fit-content;
     margin: auto;
 }
 
 .sometext2{
     overflow-x: clip;
     overflow-y: visible;
-
+    width: 80vw;
 }
 
 
@@ -1354,7 +1354,12 @@ a{
 }
 .mainvideo{
     opacity: 0;
+    display: none;
     transition: opacity 0.1s;
+}
+
+.sometext:hover .mainvideo{
+    display: block;
 }
 
 .videomain{
