@@ -1356,7 +1356,7 @@ a{
 .mainvideo{
     opacity: 0;
     display: none;
-    transition: opacity 0.1s;
+    transition: opacity 0.25s;
 }
 
 .sometext:hover .mainvideo{
